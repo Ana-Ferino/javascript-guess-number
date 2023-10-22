@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Guessing game</title>
+    </head>
+<body>
+    <h2>Game: Guess the Number!</h2>
+    <div class="text">
+        <p>We select a random number between 1 and 100.</p>
+        <p>Try to guess in <b>10</b> chances or less.</p>
+        <p>We'll tell you if your guess is <b>high</b> or <b>low</b>.</p>
+    
+        <div class="form">
+            <label for="guessField">Enter your guess: </label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit" value="Send" class="guessSent" id="guessSent">
+        </div>
+    </div>
+    <div class="results">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHigh"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
