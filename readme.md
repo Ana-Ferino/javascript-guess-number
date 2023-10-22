@@ -10,6 +10,9 @@ This is a simple number guessing game built using HTML, CSS, and JavaScript.
 4. The game will provide feedback if the guess is too high or too low.
 5. Continue guessing until you guess the correct number or reach the maximum number of guesses.
 
+![image](https://github.com/Ana-Ferino/javascript-guess-number/assets/107159320/054ca7aa-cdf0-438a-9a47-3bd3e437a28c)
+
+
 ## Features
 
 - The game provides real-time feedback on guesses.
