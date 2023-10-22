@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Guessing game</title>
+    </head>
+<body>
+    <h2>Game: Guess the Number!</h2>
+    <div class="text">
+        <p>We select a random number between 1 and 100.</p>
+        <p>Try to guess in <b>10</b> chances or less.</p>
+        <p>We'll tell you if your guess is <b>high</b> or <b>low</b>.</p>
+    
+        <div class="form">
+            <label for="guessField">Enter your guess: </label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit" value="Send" class="guessSent" onclick="checkGuess();" >
+        </div>
+    </div>
+    <div class="results">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHigh"></p>
+    </div>
+    <script>
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        var guesses = document.querySelector('.guesses');
+        var lastResult = document.querySelector('.lastResult');
+        var lowOrHigh = document.querySelector('.lowOrHigh');
+ 
+        var guessSent = document.querySelector('.guessSent');
+        var guessField = document.querySelector('.guessField');
+        var countGuesses = 1;
+        var restartButton;
+
+        function checkGuess() {
+            var userGuess = Number(guessField.value);
+            if (countGuesses === 1) {
+                guesses.textContent = 'Previous guesses: ';
+            }
+            guesses.textContent += userGuess + ' ';
+            
+            if (userGuess === randomNumber) {
+                lastResult.textContent = `Congratulations! You're right! the right number is ${userGuess}!`;
+                lastResult.style.color = 'lightgreen';
+            } else if (countGuesses === 10) {
+                lastResult.textContent = 'END OF THE GAME!';
+            } else {
+                lastResult.textContent = 'Wrong!';
+                lastResult.style.color = 'lightcoral';
+                lowOrHigh.textContent = userGuess < randomNumber ? 'Your guess is LOW!' : 'Your guess is HIGH!';
+            }
+
+            if (userGuess === randomNumber || countGuesses === 10) {
+                lowOrHigh.textContent = '';
+                endTheGame();
+            }
+
+            countGuesses++;
+            guessField.value = '';
+            guessField.focus();
+        }
+
+        function endTheGame() {
+            guessField.disabled = true;
+            guessSent.disabled = true;
+            restartButton = document.createElement('button');
+            restartButton.textContent = 'Start a new game';
+            document.body.appendChild(restartButton);
+            restartButton.addEventListener('click', restartGame);
+        }
+        
+        function restartGame() {
+            countGuesses = 1;
+
+            var restartResults = document.querySelectorAll('.results p');
+            for (var i = 0; i < restartResults.length; i++) {
+                restartResults[i].textContent = '';
+            }
+            restartButton.parentNode.removeChild(restartButton);
+            guessField.disabled = false;
+            guessSent.disabled = false;
+            guessField.value = '';
+            guessField.focus();
+            lastResult.style.backgroundColor = 'white';
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+        }
+    </script>
+</body>
+</html>

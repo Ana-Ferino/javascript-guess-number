@@ -1,0 +1,21 @@
+
+h2 {
+    text-align: center;
+    border: 2px solid violet;
+    background-color: violet;
+    padding: 6px;
+    width: 435px;
+    border-radius: 10px;
+}
+
+body {
+    font-family: Tahoma;
+    border: 3px solid #ddd;
+    padding: 5px 1px 18px 14px;
+    width: 460px;
+    border-radius: 20px;
+    position: absolute;
+    top: 23%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
