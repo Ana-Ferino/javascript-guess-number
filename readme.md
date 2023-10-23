@@ -19,6 +19,14 @@ This is a simple number guessing game built using HTML, CSS, and JavaScript.
 - The interface is user-friendly and responsive.
 - It has a limit of 10 guesses before ending the game.
 
+Example:
+<h6 align="center">
+  <img alt="GuessNumber" title="#GuessNumber" src="./assets/result_success.PNG" />
+</h6>
+<h6 align="center">
+  <img alt="GuessNumber" title="#GuessNumber" src="./assets/result_endgame.PNG" />
+</h6>
+
 ## Installation
 
 Clone this repository to your computer:
