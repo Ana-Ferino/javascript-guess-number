@@ -30,7 +30,7 @@ Example:
 Clone this repository to your computer:
 
 ```bash
-git clone https://github.com/Ana-Ferino/javascript-guess-number.git
+git clone https://github.com/your-username/javascript-guess-number.git
 ```
 ## Contributing
 
